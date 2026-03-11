@@ -5,7 +5,7 @@
 interface axi_s#(
     parameter DATA_W = 8,//Custom data width, number of bytes
     parameter USER_W = 1,//Custom user width
-    parameter TID_W,//Transaction ID width
+    parameter TID_W  = 1//Transaction ID width
     );
     logic clk;
     logic rst;

@@ -1,13 +1,13 @@
 //Simple register slice for the axi_stream interface
 //Single Sided
 //Assumes both interfaces are operating on the same clock domain
-`include "macros.sv"
+`include "../generic/macros.sv"
 module axi_reg_slice(
   interface master,
   interface slave
 );
     //Declare a register to save the ready signal driven by the slave
-    `reg_decl(out_saved, 1, 'h0, master.clk, master.rst)
+    `reg_decl(out_saved, logic [0:0], 'h0, master.clk, master.rst)
     assign slave.clk = master.clk;
     assign slave.rst = master.rst;
    always_comb begin
